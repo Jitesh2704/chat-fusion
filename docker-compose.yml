@@ -1,0 +1,102 @@
+version: "3.8"
+
+services:
+  gateway:
+    build:
+      context: ./services/gateway-service
+      dockerfile: Dockerfile
+    env_file:
+      - ./services/gateway-service/.env
+    command: ["npm", "run", "dev"]
+    develop:
+      watch:
+        - action: sync
+          path: ./services/gateway-service
+          target: /app
+          ignore:
+            - node_modules/
+        - action: rebuild
+          path: ./services/gateway-service/package.json
+    ports:
+      - 5000:5000
+    networks:
+      - CHATFUSIONMS
+    depends_on:
+      - auth
+      - notification
+      - chat
+
+  auth:
+    build:
+      context: ./services/auth-service
+      dockerfile: Dockerfile
+    command: ["npm", "run", "dev"]
+    env_file:
+      - ./database/.env.db
+      - ./services/auth-service/.env
+    develop:
+      watch:
+        - action: sync
+          path: ./services/auth-service
+          target: /app
+          ignore:
+            - node_modules/
+        - action: rebuild
+          path: ./services/auth-service/package.json
+    ports:
+      - :8001
+    networks:
+      - CHATFUSIONMS
+
+  notification:
+    build:
+      context: ./services/notification-service
+      dockerfile: Dockerfile
+    env_file:
+      - ./database/.env.db
+      - ./services/notification-service/.env
+    command: ["npm", "run", "dev"]
+    develop:
+      watch:
+        - action: sync
+          path: ./services/notification-service
+          target: /app
+          ignore:
+            - node_modules/
+        - action: rebuild
+          path: ./services/notification-service/package.json
+    ports:
+      - :8004
+    networks:
+      - CHATFUSIONMS
+
+  chat:
+    build:
+      context: ./services/chat-service
+      dockerfile: Dockerfile
+    env_file:
+      - ./database/.env.db
+      - ./services/chat-service/.env
+    command: ["npm", "run", "dev"]
+    develop:
+      watch:
+        - action: sync
+          path: ./services/chat-service
+          target: /app
+          ignore:
+            - node_modules/
+        - action: rebuild
+          path: ./services/chat-service/package.json
+    ports:
+      - :8022
+    networks:
+      - CHATFUSIONMS
+
+volumes:
+  mongodb-data-node1:
+  mongodb-data-node2:
+  mongodb-data-node3:
+
+networks:
+  CHATFUSIONMS:
+    driver: bridge
