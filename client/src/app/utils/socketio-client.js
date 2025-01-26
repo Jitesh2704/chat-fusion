@@ -1,7 +1,7 @@
 // socketio-client.js
 import io from "socket.io-client";
 
-const socket = io("http://localhost:5000", {
+const socket = io("https://gateway-service-527p.onrender.com", {
   transports: ["websocket"],
 });
 
@@ -21,7 +21,7 @@ function subscribeToNotifications(handleNotification) {
 }
 
 // Socket for the custom path
-const chatSocket = io("http://localhost:5000", {
+const chatSocket = io("https://gateway-service-527p.onrender.com", {
   path: "/api/chat",
   transports: ["websocket"],
 });

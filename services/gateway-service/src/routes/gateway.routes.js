@@ -29,7 +29,7 @@ function handleProxyReq(proxyReq, req, res, options) {
 router.use(
   "/auth",
   createProxyMiddleware({
-    target: "http://auth:8001",
+    target: "https://auth-service-2mkn.onrender.com",
     changeOrigin: true,
     pathRewrite: { "^/api/auth": "" },
     onProxyReq: handleProxyReq,
@@ -40,7 +40,7 @@ router.use(
 router.use(
   "/notification",
   createProxyMiddleware({
-    target: "http://notification:8004",
+    target: "https://notification-service-bmv0.onrender.com",
     changeOrigin: true,
     pathRewrite: {
       "^/api/notification": "",
@@ -52,7 +52,7 @@ router.use(
 router.use(
   "/chat",
   createProxyMiddleware({
-    target: "http://chat:8022",
+    target: "https://chat-service-2avx.onrender.com",
     changeOrigin: true,
     pathRewrite: {
       "^/api/chat": "",
