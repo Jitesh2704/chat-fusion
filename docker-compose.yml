@@ -11,7 +11,7 @@ services:
     ports:
       - "5000"
     networks:
-      - CHATFUSIONMS
+      - default
 
   auth:
     build:
@@ -24,7 +24,7 @@ services:
     ports:
       - "8001"
     networks:
-      - CHATFUSIONMS
+      - default
 
   notification:
     build:
@@ -37,7 +37,7 @@ services:
     ports:
       - "8004"
     networks:
-      - CHATFUSIONMS
+      - default
 
   chat:
     build:
@@ -50,7 +50,7 @@ services:
     ports:
       - "8022"
     networks:
-      - CHATFUSIONMS
+      - default
 
 volumes:
   mongodb-data-node1:
@@ -58,5 +58,5 @@ volumes:
   mongodb-data-node3:
 
 networks:
-  CHATFUSIONMS:
+  default:
     driver: bridge
