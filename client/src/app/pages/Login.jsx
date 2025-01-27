@@ -5,7 +5,7 @@ import { toast } from "react-toastify";
 import { login, logout } from "../slices/auth";
 import Logo from "../../assets/chatfusionlogo.png";
 import SideCover from "../../assets/login.jpeg";
-import Brand from "../../assets/chatFusiontext.png";
+import Brand from "../../assets/chatfusiontext.png";
 
 const LoginComponent = () => {
   const { isLoggedIn } = useSelector((state) => state.auth);

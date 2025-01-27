@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import Logo from "../../assets/chatfusionlogo.png";
-import Brand from "../../assets/chatFusiontext.png";
+import Brand from "../../assets/chatfusiontext.png";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import AuthService from "../services/auth-service/auth.service";

@@ -10,7 +10,7 @@ import { useSelector } from "react-redux";
 import ChatTab from "./chat/Chat";
 import NavBar from "./NavBar";
 import Logo from "../../assets/chatfusionlogo.png";
-import Brand from "../../assets/chatFusiontext.png";
+import Brand from "../../assets/chatfusiontext.png";
 import MessageService from "../services/chat-service/messages.service";
 import TimeAgo from "./TimesAgo";
 import { fetchUserGroupData } from "../utils/fetchUserGroupData";

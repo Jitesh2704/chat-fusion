@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { logout } from "../slices/auth";
 import Logo from "../../assets/chatfusionlogo.png";
-import Brand from "../../assets/chatFusiontext.png";
+import Brand from "../../assets/chatfusiontext.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHandshake, faUser } from "@fortawesome/free-regular-svg-icons";
 import { faBell } from "@fortawesome/free-regular-svg-icons";
