@@ -18,7 +18,7 @@ export default function Home() {
         <ProfileHeader />
       </div>
 
-      <div className="pt-10 grid grid-cols-12 gap-8 px-8">
+      <div className="pt-10 grid grid-cols-3 md:grid-cols-6 lg:grid-cols-12 gap-8 px-8">
         <div className="col-span-3">
           <RecentGroupChats />
         </div>
