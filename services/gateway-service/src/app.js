@@ -15,7 +15,7 @@ app.use("/api", routes);
 
 // Proxy middleware for WebSocket and other HTTP services
 const chatProxy = createProxyMiddleware("/api/chat", {
-  target: "https://chat-service-2avx.onrender.com", // Your backend server URL
+  target: "https://chat-service-cwmr.onrender.com", // Your backend server URL
   ws: true, // Enable WebSocket proxying
   changeOrigin: true,
   pathRewrite: {
@@ -28,7 +28,7 @@ app.use(chatProxy);
 
 // Proxy middleware for WebSocket and other HTTP services
 const notificationProxy = createProxyMiddleware("/socket.io", {
-  target: "https://notification-service-bmv0.onrender.com",
+  target: "https://notification-service-qbfs.onrender.com",
   ws: true,
   changeOrigin: true,
 });
